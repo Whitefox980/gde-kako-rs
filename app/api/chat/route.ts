@@ -1,5 +1,5 @@
 // Groq API endpoint
-   import { Groq } from 'groq';
+   import { Groq } from 'groq-sdk';
 
    export async function POST(req: Request) {
      const { messages } = await req.json();
