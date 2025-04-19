@@ -1,7 +1,10 @@
+/* app/globals.css */
 html {
+  -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
-  overflow-scrolling: touch;
 }
 select, button {
-  min-height: 48px; /* Veliki touch target */
+  min-width: 120px;
+  min-height: 48px;
+  font-size: 1.1rem;
 }
