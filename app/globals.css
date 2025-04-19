@@ -1,10 +1,8 @@
-/* app/globals.css */
-html {
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-}
-select, button {
-  min-width: 120px;
-  min-height: 48px;
-  font-size: 1.1rem;
-}
+@tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   
+   :root {
+     --font-sans: 'Geist Sans', sans-serif;
+     --font-mono: 'Geist Mono', monospace;
+   }
