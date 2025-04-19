@@ -1,0 +1,7 @@
+html {
+  touch-action: manipulation;
+  overflow-scrolling: touch;
+}
+select, button {
+  min-height: 48px; /* Veliki touch target */
+}
