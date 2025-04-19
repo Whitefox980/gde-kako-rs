@@ -1,15 +1,20 @@
-import { NextResponse } from 'next/server'
-import Groq from 'groq'
-
-const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY || ''
-})
+import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
-  const { messages } = await req.json()
-  const response = await groq.chat.completions.create({
-    messages,
-    model: 'mixtral-8x7b-32768'
-  })
-  return NextResponse.json(response)
+  const { messages } = await req.json();
+  
+  const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      model: 'mixtral-8x7b-32768',
+      messages
+    })
+  });
+
+  const data = await response.json();
+  return NextResponse.json(data);
 }
