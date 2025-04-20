@@ -1,1 +1,3 @@
-echo "lib/" >> .gitignore
+node_modules/
+.next/
+.env
